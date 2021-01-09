@@ -31,13 +31,6 @@ ActiveRecord::Schema.define(version: 2021_01_09_210702) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "forecasts", force: :cascade do |t|
-    t.float "lat"
-    t.float "lng"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.text "username"
     t.text "zipcode"
