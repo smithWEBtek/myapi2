@@ -65,7 +65,7 @@ There are many health benefits of owning a pet. Studies have shown that the bond
 - columns
   - username, zipcode
 - migration (a recipe Rails uses to create the database table)
-  - rails generate migration User text:username text:zipcode
+  - rails g resource User username:text zipcode:text
 - relationships
   - has_many :cats
   - has_many :dogs
@@ -74,11 +74,19 @@ There are many health benefits of owning a pet. Studies have shown that the bond
 - columns
   - name, breed, user_id
 - migration
-  - rails g migration Cat text:name text:breed integer:user_id
+  - rails g resource Cat name:text breed:text user_id:integer
 - relationships
   - belongs_to :user, optional: true
 
-## weather_event  
+## dog
+- columns
+  - name, breed, user_id
+- migration
+  - rails g resource Dog name:text breed:text user_id:integer
+- relationships
+  - belongs_to :user, optional: true
+
+## forecast  
 - columns
   - event_datetime, lat, lng
 - migration

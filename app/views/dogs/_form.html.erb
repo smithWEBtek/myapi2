@@ -1,0 +1,8 @@
+<h1>Create a new dog</h1>
+<%= form_for @dog do |f| %>
+  <p>name: <%= f.text_field :name %></p>
+  <p>breed: <%= f.text_field :breed %></p>
+  <p>select_owner: <%= f.collection_select(:user_id, User.all, :id, :username) %></p>
+
+  <p><%= f.submit %></p>
+<% end %>
