@@ -1,14 +1,16 @@
-<h1>Weather API</h1>
-<link rel="stylesheet" href="weather.css">
+<h1 class="page-title">Weather API</h1>
 <div id="app-container">
   <div id="location">
-
+    <p>Bedford, NH</p>
   </div>
   <div id="temp">
-
+    <img id="temp-icon" src="/icons/day.svg" alt="plain day image">
+    <div id="climate">
+      <p>Sunny</p>
+    </div>
+    <p><span id="temp-value">35</span><span id="temp-unit">&#176F</span></p>
+    <p><span id="feels-like">feels like: </span><span id="temp-unit">&#176F</span></p>
+    <p id="lat">latitude: </p>
+    <p id="lon">longitude: </p>
   </div>
-  <div id="climate">
-
-  </div>
-  <script src="weather.js"></script>
 </div>
