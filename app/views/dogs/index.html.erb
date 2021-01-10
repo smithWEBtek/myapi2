@@ -1,8 +1,10 @@
-<h1 class="page-title">Dogs index</h1>
-<hr>
-<% @dogs.each do |dog| %>
-  <p>name: <%= dog.name %></p>
-  <p>breed: <%= dog.breed %></p>
-  <p>owner: <%= dog.user.username %></p>
+<div class="pets">
+  <h1 class="page-title">Dogs index</h1>
   <hr>
-<% end %>
+  <% @dogs.each do |dog| %>
+    <p>name: <%= dog.name %></p>
+    <p>breed: <%= dog.breed %></p>
+    <p>owner: <%= dog.user.username %></p>
+    <hr>
+  <% end %>
+</div>
