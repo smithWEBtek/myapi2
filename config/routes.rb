@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :dogs
   resources :cats
   resources :users
-  resources :forecasts
+  get '/weather', to: 'static#weather'
+
   root to: 'static#home'
 end
