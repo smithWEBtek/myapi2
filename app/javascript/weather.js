@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let temp, loc, icon, lat, lon, zipCode, apiKey, feelsLike;
+  let temp, loc, icon, lat, lon, zipCodes, zipCode, apiKey, feelsLike;
   
-  // zipCode = '90210'
-  // zipCode = '25314'
-  // zipCode = '99504'
-  zipCode = '59801'
+  zipCodes = ['59801', '86001', '90210', '71861', '25314', '99504']
+  zipCode = zipCodes[Math.round(Math.random() * (zipCodes.length - 1))]
+
   apiKey = '1348f83b111dc5421baf189222031f32'
 
   if (navigator.geolocation) {
@@ -16,17 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // lon = '99.1967'
 
       // New Zeeland:
-      lat = '36.8483'
-      lon = '174.7626'
-
-      console.log('lat: ', lat)
-      console.log('log: ', lon)
+      // lat = '36.8483'
+      // lon = '174.7626'
       
-      // const apiZipCode = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}`
+      const apiZipCode = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}`
       const apiLatLng = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
       
-      // fetch(apiZipCode)
-      fetch(apiLatLng)
+      fetch(apiZipCode)
+      // fetch(apiLatLng)
       .then((response) => {
         return response.json();
       })
@@ -39,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lon = data.coord.lon
         climate = data.weather[0].main
 
-
         console.log('data: ', data)
-        // debugger;
 
         const params = {
           temp: temp,
@@ -61,8 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const loadPage = (params) => {
-  // let temp, loc, icon, lat, lon, zipCode, apiKey;
-  
   loc = document.getElementById('location')
   loc.innerText = params.loc
   
