@@ -3,9 +3,15 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    respond_to do |f|
+      f.json { render json: @dogs }
+    end
   end
-
+  
   def show
+    respond_to do |f|
+      f.json { render json: @dog }
+    end
   end
 
   def new

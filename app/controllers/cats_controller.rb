@@ -3,9 +3,15 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat.all
+    respond_to do |f|
+      f.json { render json: @cats }
+    end
   end
 
   def show
+    respond_to do |f|
+      f.json { render json: @cat }
+    end
   end
 
   def new
