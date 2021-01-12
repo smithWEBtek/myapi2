@@ -1,3 +1,3 @@
 class DogSerializer < ActiveModel::Serializer
-  attributes :id, :name, :breed, :user_id
+  attributes :id, :name, :breed, :user
 end
