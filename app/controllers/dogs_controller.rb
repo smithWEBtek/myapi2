@@ -4,6 +4,7 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.all
     respond_to do |f|
+      f.html { render :index }
       f.json { render json: @dogs }
     end
   end
