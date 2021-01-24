@@ -1,34 +1,51 @@
+
+---
 # agenda
-### - MVC restaurant analogy
-### - demo Rails API
-### - access external API's
-### - view JSON data via Rails API endpoints
+### * MVC restaurant analogy
+### * demo Rails API
+### * access external API's
+### * view JSON data via Rails API endpoints
+<p>&nbsp;</p>
+
 ---
 
 # MVC restaurant analogy
 
-### `Model(chef)`
-- analagous to the database table
-- cooks dishes as directed by the `Controller(waiter)`
- 
-| The Model(chef) | in Rails |
-| :---: | :---: |
-![](https://res.cloudinary.com/smithwebtek/image/upload/v1611429996/myapi2/chef.jpg) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611432225/myapi2/rails-models.png)
+Model | View | Controller
+| :---: | :---: | :---: |
+Chef | Menu | Waiter   
+<p>&nbsp;</p>
 
 ---
 
-## `View(menu)` 
+# Model
+### * analagous to the database table
+### * cooks dishes as directed by the `Controller(waiter)`
+### * doesn't like it when you try to ask for things not on the menu
+### * might accept suggestions from the waiter
+### * might throw something if a customer barges into the kitchen demanding a special dish
+ 
+| `Model(chef)` | `in Rails` |
+| :---: | :---: |
+![](https://res.cloudinary.com/smithwebtek/image/upload/v1611429996/myapi2/chef.jpg) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611432225/myapi2/rails-models.png)
+<p>&nbsp;</p>
+
+---
+
+# `View(menu)` 
 - is a UI for ordering dishes
 - analagous to the browser View pages
 - Rails views in `app/views`, implicitly named after controllers
-
+<p>&nbsp;</p>
  
-| The View(menu) | in Rails |
+| View(menu) | in Rails |
 | :---: | :---: |
 ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611430895/myapi2/menu.png) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611432716/myapi2/rails-views.png)
 
+<p>&nbsp;</p>
 
 ---
+
 ## `Controller(waiter)`
 - takes user orders from the `View:menu`
 - has defined actions that correspond to menu items
@@ -38,31 +55,35 @@
 | The Controller(waiter) | in Rails |
 | :---: | :---: |
 ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611429996/myapi2/waiter.png) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611434275/myapi2/rails-controllers.png)
-
----
-## yes you could directly ask the chef for a sandwich, but ...
-  - Rails approach is `convention over configuration`
-    - order from the **menu(VIEW)** with the **waiter(CONTROLLER)**
-    - **waiter(CONTROLLER)** directs the **chef(MODEL)** to cook dish
-    - if you want takeout, ask for **JSON data**
----
----
----
----
----
----
-
----
-## why?
-- the waiter might not be aware of one-off creative orders
-- restaurant owner wants menu be served with stocked resources
-- the pricing of 1-off creative dishes might not be correct
-- not scalable if the system is not followed
-- so Rails devs try to first think about where a thing should exist in the code, even though it 'could' be in many places and formations
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 
+---
+# yes you could bypass the waiter and ask the chef for a sandwich, but ...
 
+![](https://res.cloudinary.com/smithwebtek/image/upload/c_scale,h_227/v1611438194/myapi2/angry-chef.jpg)
+### - the waiter might not be aware of **one-off creative orders**
+### - restaurant owner wants menu be served with **stocked resources**
+### - the **pricing** of 1-off creative dishes might not be correct
+### - **not scalable** if the system is not followed
+### - Rails devs try to first think about **where a thing should exist in the code**, even though it 'could' be in many places and formations
+<p>&nbsp;</p>
+
+--- 
+## **Rails approach is `convention over configuration`**
+ - order from the **menu(VIEW)** with the **waiter(CONTROLLER)**
+ - **waiter(CONTROLLER)** directs the **chef(MODEL)** to cook dish
+<p>&nbsp;</p>
+
+---
+## if you want takeout, ask for **JSON data**
+<p>&nbsp;</p>
+
+---
 ## demo api context
+
 [About Pets & People](https://www.cdc.gov/healthypets/health-benefits/index.html#:~:text=There%20are%20many%20health%20benefits,depression%20by%20giving%20us%20companionship.)
 
 There are many health benefits of owning a pet. Studies have shown that the bond between people and their pets can increase fitness, lower stress, and bring happiness to their owners. Some of the health benefits of having a pet include:
