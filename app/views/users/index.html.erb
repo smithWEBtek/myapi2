@@ -1,0 +1,9 @@
+<div class="users">
+  <h1 class="page-title">Users index</h1>
+  <hr>
+  <% @users.each do |user| %>
+    <p>username: <%= user.username %></p>
+    <p>zipcode: <%= user.zipcode %></p>
+    <hr>
+  <% end %>
+</div>
