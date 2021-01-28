@@ -1,8 +1,7 @@
-<h1>Create a new cat</h1>
 <%= form_for @cat do |f| %>
-  name: <p><%= f.text_field :name %></p>
-  breed: <p><%= f.text_field :breed %></p>
-  select_owner: <p><%= f.collection_select(:user_id, User.all, :id, :username) %></p>
+  <p>name: <%= f.text_field :name %></p>
+  <p>breed: <%= f.text_field :breed %></p>
+  <p>select_owner: <%= f.collection_select(:user_id, User.all, :id, :username) %></p>
 
   <p><%= f.submit %></p>
 <% end %>
