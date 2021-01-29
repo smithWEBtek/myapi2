@@ -1,6 +1,6 @@
-User.create(username: 'joe', zipcode: 03110)
-User.create(username: 'jane', zipcode: 02115)
-User.create(username: 'john', zipcode: 90210)
+User.create(username: 'joe', zipcode: '03110')
+User.create(username: 'jane', zipcode: '02115')
+User.create(username: 'john', zipcode: '90210')
 
 Dog.create(name: 'fido', breed: 'beagle', user_id: 1)
 Dog.create(name: 'scamp', breed: 'collie', user_id: 2)

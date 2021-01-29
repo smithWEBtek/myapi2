@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function fetchCat() {
-  const catApiKey = $('div#api')[0].dataset.apiKey
-
+  
   $('button#new-cat').on('click', (event) => {
     event.preventDefault()
-
+    let catApiKey = $('div#api')[0].dataset.apiKey
+    
     $.get({
       url: 'https://api.thecatapi.com/v1/images/search?limit=1',
       api_key: catApiKey
