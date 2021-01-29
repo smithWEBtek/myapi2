@@ -9,6 +9,7 @@ class StaticController < ApplicationController
   end
 
   def cat_api
+    @api_key = Rails.application.credentials.cat[:api_key]
   end
 
   def dog_api
