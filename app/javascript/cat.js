@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function fetchCat() {
-  // const btnGetCat = document.querySelector('button#new-cat')
-  // btnGetCat.addEventListener('click', (event) => {
+  const catApiKey = $('div#api')[0].dataset.apiKey
+
   $('button#new-cat').on('click', (event) => {
     event.preventDefault()
 
     $.get({
       url: 'https://api.thecatapi.com/v1/images/search?limit=1',
-      api_key: 'ab317b33-666f-46b8-bcc8-f2c54d51941b'
+      api_key: catApiKey
     }).done(response => response)
       .then(json => {
         console.log('json: ', json)
@@ -27,7 +27,5 @@ function renderCat(catUrl) {
       <img src=${catUrl}  class="cat-image" />  
     </div>
   `)
-
-  // $('#main').html(cat)
   $('#main').append(cat)
 }

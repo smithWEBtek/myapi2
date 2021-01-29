@@ -11,17 +11,9 @@
   <body>
     <h3>Click the button to get a new Cat from the API</h3>
     <button id="new-cat">Get New Cat</button>
+    <p>api_key: <%= @api_key %></p>
+    <%= content_tag "div", id: "api", data: { api_key: @api_key } do %>
+    <% end %>
     <div id="main"></div>
-
-    <div class="documentation">
-      The Cat API - API Key
-      Thanks for signing up, welcome to the API!
-      Your API key:
-      ab317b33-666f-46b8-bcc8-f2c54d51941b
-      Use it as the 'x-api-key' header when making any request to the API, or by adding as a query string paramter e.g. 'api_key=ab317b33-666f-46b8-bcc8-f2c54d51941b' More details on authentication.
-      API Documentation | Postman Collection.
-      If you need any example code, or have any questions then checkout the forum: https://forum.thatapiguy.com
-      All the best, Aden.
-    </div>
   </body>
 </html>

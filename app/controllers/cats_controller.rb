@@ -8,17 +8,17 @@ class CatsController < ApplicationController
       f.json { render json: @cats }
     end
   end
-
+  
   def show
     respond_to do |f|
       f.json { render json: @cat }
     end
   end
-
+  
   def new
     @cat = Cat.new
   end
-
+  
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
@@ -27,10 +27,10 @@ class CatsController < ApplicationController
       render :new
     end
   end
-
+  
   def edit
   end
-
+  
   def update
     if @cat.update(cat_params)
       redirect_to cat_path(@cat)
@@ -38,16 +38,16 @@ class CatsController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     @cat.destroy
   end
-
+  
   private
   def set_cat
     @cat = Cat.find(params[:id])
   end
-
+  
   def cat_params
     params.require(:cat).permit(:name, :breed, :user_id)
   end
