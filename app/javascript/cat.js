@@ -20,8 +20,6 @@ function fetchCat() {
 }
 
 function renderCat(catUrl) {
-  const main = document.querySelector('#main')
-  const h2 = document.createElement('img')
   let cat = (`
     <div>
       <img src=${catUrl}  class="cat-image" />  
