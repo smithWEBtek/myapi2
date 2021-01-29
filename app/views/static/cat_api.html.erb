@@ -11,7 +11,6 @@
   <body>
     <h3>Click the button to get a new Cat from the API</h3>
     <button id="new-cat">Get New Cat</button>
-    <p>api_key: <%= @api_key %></p>
     <%= content_tag "div", id: "api", data: { api_key: @api_key } do %>
     <% end %>
     <div id="main"></div>
