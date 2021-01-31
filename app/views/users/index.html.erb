@@ -3,7 +3,26 @@
   <hr>
   <% @users.each do |user| %>
     <p>username: <%= user.username %></p>
-    <p>zipcode: <%= user.zipcode %></p>
+    <p><%= user.city %>, <%= user.state %>, <%= user.country %> </p>
+    
+    <p>cats: </p>
+    <% if user.cats.count > 0 %>
+      <% user.cats.each do |cat| %>
+        <p><%= cat.breed %>: <strong><%= cat.name %></strong></p>
+      <% end %>
+    <% else %>
+      <p>0 cats for this user</p>
+    <% end %>
+    <hr>
+    
+    <p>dogs: </p>
+    <% if user.dogs.count > 0 %>
+      <% user.dogs.each do |dog| %>
+        <p><%= dog.breed %>: <strong><%= dog.name %></strong></p>
+      <% end %>
+    <% else %>
+      <p>0 dogs for this user</p>
+    <% end %>
     <hr>
   <% end %>
 </div>

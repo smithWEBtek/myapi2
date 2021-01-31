@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/cat_api', to: 'static#cat_api'
   root to: 'static#home'
 
-  get '/github_search', to: 'static#github_search'
+  get '/github', to: 'static#github'
   post '/github_search_api', to: 'static#github_search_api'
+
+  get '/user_api', to: 'static#user_api'
 end

@@ -108,23 +108,6 @@ Chef | Menu | Waiter |
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 # directly asking the chef for a sandwich ...
 
@@ -298,3 +281,37 @@ There are many health benefits of owning a pet. Studies have shown that the bond
 <p>&nbsp;</p>
 
 ---
+
+# resources
+
+## apis
+people  https://randomuser.me/
+
+cats  https://thecatapi.com/
+
+dogs  https://dog.ceo/dog-api/
+
+weather https://openweathermap.org/appid
+
+mock api  https://jsonplaceholder.typicode.com/guide/
+
+mock api https://example.com
+
+api medic symptom checker https://rapidapi.com/priaid/api/symptom-checker/endpoints
+
+## data
+clinical trials gov https://clinicaltrials.gov/ct2/resources/download#DownloadStudy
+
+fake data mockaroo.com https://www.mockaroo.com/
+
+## tools
+postman api tool https://www.postman.com/
+
+## rails
+guides https://guides.rubyonrails.org/api_app.html
+
+walkthru basic Rails API https://codeburst.io/
+
+how-to-build-a-good-api-using-rubyonrails-ef7eadfa3078
+
+Rails with jquery study group https://www.youtube.com/watch?v=b93S2_Hc8z8
