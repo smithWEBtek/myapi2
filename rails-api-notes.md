@@ -1,59 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [MVC restaurant analogy](#mvc-restaurant-analogy)
-- [`Model(chef)`](#modelchef)
-  - [- analagous to the database table](#--analagous-to-the-database-table)
-  - [- cooks dishes as directed by the `Controller(waiter)`](#--cooks-dishes-as-directed-by-the-controllerwaiter)
-  - [- doesn't like it when you try to ask for things not on the menu](#--doesnt-like-it-when-you-try-to-ask-for-things-not-on-the-menu)
-  - [- might accept suggestions from the waiter](#--might-accept-suggestions-from-the-waiter)
-  - [- might throw something if a customer barges into the kitchen demanding a special dish](#--might-throw-something-if-a-customer-barges-into-the-kitchen-demanding-a-special-dish)
-- [`View(menu)`](#viewmenu)
-  - [- is a UI for ordering dishes](#--is-a-ui-for-ordering-dishes)
-  - [- analagous to the browser View pages](#--analagous-to-the-browser-view-pages)
-  - [- Rails views in `app/views`, implicitly named after controllers](#--rails-views-in-appviews-implicitly-named-after-controllers)
-- [`Controller(waiter)`](#controllerwaiter)
-  - [- takes user orders from the `View:menu`](#--takes-user-orders-from-the-viewmenu)
-  - [- has defined actions that correspond to menu items](#--has-defined-actions-that-correspond-to-menu-items)
-  - [- handles incoming orders and routes and redirects requests](#--handles-incoming-orders-and-routes-and-redirects-requests)
-  - [- controls access to the kitchen](#--controls-access-to-the-kitchen)
-- [directly asking the chef for a sandwich ...](#directly-asking-the-chef-for-a-sandwich-)
-  - [- the waiter might not be aware of **one-off creative orders**](#--the-waiter-might-not-be-aware-of-one-off-creative-orders)
-  - [- restaurant owner wants menu be served with **stocked resources**](#--restaurant-owner-wants-menu-be-served-with-stocked-resources)
-  - [- the **pricing** of 1-off creative dishes might not be correct](#--the-pricing-of-1-off-creative-dishes-might-not-be-correct)
-  - [- **not scalable** if the system is not followed](#--not-scalable-if-the-system-is-not-followed)
-  - [- Rails devs try to first think about **where a thing should exist in the code**, even though it 'could' be in many places and formations](#--rails-devs-try-to-first-think-about-where-a-thing-should-exist-in-the-code-even-though-it-could-be-in-many-places-and-formations)
-- [**Rails approach is `convention over configuration`**](#rails-approac◊h-is-convention-over-configuration)
-    - [- order from the **menu(VIEW)** with the **waiter(CONTROLLER)**](#--order-from-the-menuview-with-the-waitercontroller)
-    - [- **waiter(CONTROLLER)** directs the **chef(MODEL)** to cook dish](#--waitercontroller-directs-the-chefmodel-to-cook-dish)
-- [if you want takeout,](#if-you-want-takeout)
-- [ask for **JSON data**](#ask-for-json-data)
-  - [- Rails in API mode, serving JSON](#--rails-in-api-mode-serving-json)
-  - [- Rails getting JSON data from external APIs](#--rails-getting-json-data-from-external-apis)
-  - [- Transformed JSON data served at Rails controller endpoints](#--transformed-json-data-served-at-rails-controller-endpoints)
-- [demos and walkthrus](#demos-and-walkthrus)
-  - [voter api and client](#voter-api-and-client)
-  - [autism-tools api and client](#autism-tools-api-and-client)
-  - [Rails app with views and JSON data](#rails-app-with-views-and-json-data)
-  - [build a simple Cats and Dogs Rails app with JSON data endpoints](#build-a-simple-cats-and-dogs-rails-app-with-json-data-endpoints)
-  - [pull from the Cat API](#pull-from-the-cat-api)
-  - [pull from the Dog API](#pull-from-the-dog-api)
-  - [pull from the Weather API](#pull-from-the-weather-api)
-  - [serve the results from Rails API endpoints](#serve-the-results-from-rails-api-endpoints)
-- [problem](#problem)
-- [business logic](#business-logic)
-- [api data sources](#api-data-sources)
-- [data model](#data-model)
-  - [user](#user)
-  - [cat](#cat)
-  - [dog](#dog)
-  - [forecast](#forecast)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
----
 # agenda
 ## - MVC restaurant analogy
 ## - access external APIs
@@ -130,7 +74,7 @@ Chef | Menu | Waiter |
 ## - Rails views in `app/views`, implicitly named after controllers
 <p>&nbsp;</p>
  
-| View(menu) | in Rails |
+| `View(menu)` | `in Rails` |
 | :---: | :---: |
 ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611430895/myapi2/menu.png) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611432716/myapi2/rails-views.png)
 
@@ -151,7 +95,7 @@ Chef | Menu | Waiter |
 ## - handles incoming orders and routes and redirects requests 
 ## - controls access to the kitchen
 
-| The Controller(waiter) | in Rails |
+| `Controller(waiter)` | `in Rails` |
 | :---: | :---: |
 ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611429996/myapi2/waiter.png) | ![](https://res.cloudinary.com/smithwebtek/image/upload/v1611434275/myapi2/rails-controllers.png)
 <p>&nbsp;</p>
