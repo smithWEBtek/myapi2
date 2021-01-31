@@ -24,7 +24,7 @@
   - [- the **pricing** of 1-off creative dishes might not be correct](#--the-pricing-of-1-off-creative-dishes-might-not-be-correct)
   - [- **not scalable** if the system is not followed](#--not-scalable-if-the-system-is-not-followed)
   - [- Rails devs try to first think about **where a thing should exist in the code**, even though it 'could' be in many places and formations](#--rails-devs-try-to-first-think-about-where-a-thing-should-exist-in-the-code-even-though-it-could-be-in-many-places-and-formations)
-- [**Rails approach is `convention over configuration`**](#rails-approach-is-convention-over-configuration)
+- [**Rails approach is `convention over configuration`**](#rails-approac◊h-is-convention-over-configuration)
     - [- order from the **menu(VIEW)** with the **waiter(CONTROLLER)**](#--order-from-the-menuview-with-the-waitercontroller)
     - [- **waiter(CONTROLLER)** directs the **chef(MODEL)** to cook dish](#--waitercontroller-directs-the-chefmodel-to-cook-dish)
 - [if you want takeout,](#if-you-want-takeout)
@@ -237,7 +237,82 @@ Chef | Menu | Waiter |
 ---
 # demos and walkthrus
 
-  ## voter api and client
+## misc examples of Rails getting API data
+## pull from the Weather API
+## pull from the Github API
+
+
+
+## Rails app with views and JSON data
+## build a simple Cats and Dogs Rails app with JSON data endpoints
+## pull from the Cat API
+## pull from the Dog API
+## serve the results from Rails API endpoints
+
+[About Pets & People](https://www.cdc.gov/healthypets/health-benefits/index.html#:~:text=There%20are%20many%20health%20benefits,depression%20by%20giving%20us%20companionship.)
+There are many health benefits of owning a pet. Studies have shown that the bond between people and their pets can increase fitness, lower stress, and bring happiness to their owners. Some of the health benefits of having a pet include:
+
+* Decreased blood pressure, cholesterol and triglyceride levels
+* Decreased feelings of loneliness
+* Increased opportunities for exercise, outdoor activities and socialization
+
+# problem
+ A group of users are adopting pets. 
+ - We want to see who owns which pets.
+ - We want to provide the same information via JSON data at api endpoints.
+
+# business logic
+- Which users have adopted which pets?
+- Show a Highchart of users and pet counts
+- Show Rails views of all Users, Dogs, Cats, Reports, if requesting HTML
+- Provide API endpoints for all data in JSON format, if requesting JSON
+
+# api data sources
+- cat api
+  - get request for random cat pic
+- dog api
+  - get request for random dog pic
+
+# data model
+- user(s)
+- cat(s)
+- dog(s)
+- weather
+
+## user
+- columns
+  - username, zipcode
+- migration (a recipe Rails uses to create the database table)
+  - rails g resource User username:text zipcode:text
+- relationships
+  - has_many :cats
+  - has_many :dogs
+
+## cat
+- columns
+  - name, breed, user_id
+- migration
+  - rails g resource Cat name:text breed:text user_id:integer image:text
+- relationships
+  - belongs_to :user, optional: true
+
+## dog
+- columns
+  - name, breed, user_id
+- migration
+  - rails g resource Dog name:text breed:text user_id:integer image:text
+- relationships
+  - belongs_to :user, optional: true
+
+## forecast  
+- columns
+  - event_datetime, lat, lng
+- migration
+- relationships
+
+
+# demo projects
+## voter api and client
 [voter api](https://voter-api.smithwebtek.com)
 
 [voter client](https://voter.smithwebtek.com)
@@ -279,76 +354,3 @@ Chef | Menu | Waiter |
 <p>&nbsp;</p>
 
 ---
-
-## Rails app with views and JSON data
-## build a simple Cats and Dogs Rails app with JSON data endpoints
-## pull from the Cat API
-## pull from the Dog API
-## pull from the Weather API
-## serve the results from Rails API endpoints
-
-[About Pets & People](https://www.cdc.gov/healthypets/health-benefits/index.html#:~:text=There%20are%20many%20health%20benefits,depression%20by%20giving%20us%20companionship.)
-There are many health benefits of owning a pet. Studies have shown that the bond between people and their pets can increase fitness, lower stress, and bring happiness to their owners. Some of the health benefits of having a pet include:
-
-* Decreased blood pressure, cholesterol and triglyceride levels
-* Decreased feelings of loneliness
-* Increased opportunities for exercise, outdoor activities and socialization
-
-# problem
- A group of users are adopting pets. We want to track the adoption metrics and glean insights based on:
- - type of pet adopted
- - day of adoption
- - weather in the zipcode on the day of adoption
-
-# business logic
-- Which users have adopted which kinds of pets on which days?
-- Show correlation of the weather on pet adoption.
-- CRUD users, pets, weather
-- Chart pet adoption by users on a weekly basis 
-- Provide basic views of all data
-- Provide API endpoints for all data in JSON format, as requested
-
-# api data sources
-- cat api
-  - get request for random cat pic
-- dog api
-  - get request for random dog pic
-- weather api
-  - get request for daily weather stats
-
-# data model
-- user(s)
-- cat(s)
-- dog(s)
-- weather
-
-## user
-- columns
-  - username, zipcode
-- migration (a recipe Rails uses to create the database table)
-  - rails g resource User username:text zipcode:text
-- relationships
-  - has_many :cats
-  - has_many :dogs
-
-## cat
-- columns
-  - name, breed, user_id
-- migration
-  - rails g resource Cat name:text breed:text user_id:integer image:text
-- relationships
-  - belongs_to :user, optional: true
-
-## dog
-- columns
-  - name, breed, user_id
-- migration
-  - rails g resource Dog name:text breed:text user_id:integer image:text
-- relationships
-  - belongs_to :user, optional: true
-
-## forecast  
-- columns
-  - event_datetime, lat, lng
-- migration
-- relationships

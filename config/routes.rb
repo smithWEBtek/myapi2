@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   get '/thrones_api', to: 'static#thrones_api'
   get '/cat_api', to: 'static#cat_api'
   root to: 'static#home'
+
+  get '/github_search', to: 'static#github_search'
+  post '/github_search_api', to: 'static#github_search_api'
 end
