@@ -1,7 +1,6 @@
 $(() => {
 
-  $('button#new-cat').on('click', (event) => {
-    event.preventDefault()
+  $('button#new-cat').on('click', () => {
     let catApiKey = $('div#api')[0].dataset.apiKey
 
     $.get({

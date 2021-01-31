@@ -15,7 +15,10 @@ class StaticController < ApplicationController
   def dog_api
   end
 
-  def github_search
+  def user_api
+  end
+
+  def github
   end
 
   def github_search_api
@@ -30,14 +33,14 @@ class StaticController < ApplicationController
       req.params['client_secret'] = client_secret
       req.params['q'] = params[:query]
       end
-      
+
     body = JSON.parse(@resp.body)
       if @resp.success?
         @repos = body["items"]
       else
         @error = "errors! oh my!" #body["meta"]["errorDetail"]
       end
-    render 'github_search'
+      render 'github'
   end
 
 end

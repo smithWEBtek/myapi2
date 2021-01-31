@@ -1,0 +1,23 @@
+<div>
+  <% if error %>
+    <p><%= error %></p>
+  <% elsif repos %>
+  <table>
+    <th>
+      <tr>
+        <td>Name</td>
+        <td>Link to repository</td>
+        <td>Description</td>
+        </tr>
+    </th></strong>
+    <% repos.each do |repo| %>
+    <tr>
+      <td><%= repo["name"] %></td>
+      <td><%= link_to repo["html_url"], repo["html_url"] %></td>
+      
+      <td><%= repo["description"] %></td>
+    <% end %>
+  <% end %>
+  </tr>
+</table>
+</div>
