@@ -1,3 +1,50 @@
-.cat-image {
-  width: 20rem;
+.cats {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid silver;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  width: auto;
+}
+
+.nowrap {
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.wrap li {
+  background: gold;
+}
+
+.wrap-reverse {
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.wrap-reverse li {
+  background: deepskyblue;
+}
+
+.cats .cats-image img {
+  padding: 5px;
+  width: 13rem;
+  height: auto;
+  margin: 1px;
+
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  display: inline;
+  /* width: 20rem; */
 }

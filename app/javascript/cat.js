@@ -1,13 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  fetchCat()
-})
+$(() => {
 
-function fetchCat() {
-  
   $('button#new-cat').on('click', (event) => {
     event.preventDefault()
     let catApiKey = $('div#api')[0].dataset.apiKey
-    
+
     $.get({
       url: 'https://api.thecatapi.com/v1/images/search?limit=1',
       api_key: catApiKey
@@ -17,13 +13,13 @@ function fetchCat() {
         renderCat(json[0].url)
       })
   })
-}
 
-function renderCat(catUrl) {
-  let cat = (`
-    <div>
-      <img src=${catUrl}  class="cat-image" />  
+  function renderCat(catUrl) {
+    let cat = (`
+    <div class="cats-image">
+    <img src=${catUrl} />  
     </div>
-  `)
-  $('#main').append(cat)
-}
+    `)
+    $('div.cats').append(cat)
+  }
+})
