@@ -23,7 +23,7 @@
 body {
   height: 100vh;
   background-color: #daf0f7;
-  background-image: linear-gradient(#e3fafc, #5b86e5)
+  /* background-image: linear-gradient(#e3fafc, #5b86e5) */
 }
 
 .pets, .users {

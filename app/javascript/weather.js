@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const loadPage = (params) => {
+  debugger;
+  
   loc = document.getElementById('location')
   loc.innerText = params.loc
   

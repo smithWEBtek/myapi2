@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     respond_to do |f|
+      f.html
       f.json { render json: @user }
     end
   end

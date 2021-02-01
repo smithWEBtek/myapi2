@@ -4,7 +4,7 @@
   <% @cats.each do |cat| %>
     <p>name: <%= cat.name %></p>
     <p>breed: <%= cat.breed %></p>
-    <p>owner: <%= cat.user.username %></p>
+    <p>owner: <%= link_to cat.user.username, user_path(cat.user) %></p>
     <hr>
   <% end %>
 </div>

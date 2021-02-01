@@ -1,0 +1,19 @@
+<h2><%= @user.username %></h2>
+
+<h4>cats:</h4>
+<% if @user.cats.count > 0 %>
+  <% @user.cats.each do |cat| %>
+    <p><%= cat.name %></p>
+  <% end %>
+<% else %>
+  <p>no cats for this user</p>
+<% end %>
+
+<h4>dogs:</h4>
+<% if @user.dogs.count > 0 %>
+  <% @user.dogs.each do |dog| %>
+    <p><%= dog.name %></p>
+  <% end %>
+<% else %>
+  <p>no dogs for this user</p>
+<% end %>

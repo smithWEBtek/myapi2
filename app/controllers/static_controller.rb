@@ -2,8 +2,8 @@ class StaticController < ApplicationController
   def home
   end
 
-  def weather_api
-  end
+  # def weather_api
+  # end
 
   def thrones_api
   end
